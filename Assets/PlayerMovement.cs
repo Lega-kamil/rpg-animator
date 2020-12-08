@@ -23,10 +23,28 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            animator.SetBool("run", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            animator.SetBool("run", false);
+        }
+
 
     }
     public void Jump()
     {
         animator.SetTrigger("jump");
     }
+
+    //public void Running()
+    //{
+      //  animator.SetBool("run", true);
+    //}
+    //
+
 }
